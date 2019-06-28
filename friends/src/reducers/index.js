@@ -42,6 +42,12 @@ const reducer = (state = initialState, action) => {
         fetchingFriends: false,
         friends: action.payload
       };
+    case FETCH_DATA_FAILURE: {
+      return {
+        ...state,
+        errorStatusCode: action.payload.status
+      };
+    }
     default:
       return state;
   }
